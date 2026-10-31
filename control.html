@@ -11,9 +11,9 @@
     // Tema Dia/Noche antes de pintar (sin parpadeo negro al abrir en modo Dia).
     try { if (localStorage.getItem('kouddy_remote_theme') === 'light') document.documentElement.setAttribute('data-theme', 'light'); } catch (e) {}
   </script>
-  <script type="module" crossorigin src="./assets/control-BvRVgjZx.js"></script>
+  <script type="module" crossorigin src="./assets/control-B4SR50-5.js"></script>
   <link rel="modulepreload" crossorigin href="./assets/realtime-BhLjBuVg.js">
-  <link rel="stylesheet" crossorigin href="./assets/control-BRJA28PV.css">
+  <link rel="stylesheet" crossorigin href="./assets/control-BSJTPY3k.css">
 </head>
 <body>
   <header class="top">
@@ -45,6 +45,12 @@
     <h1 id="message-title"></h1>
     <p id="message-text"></p>
     <a id="message-action" class="primary" href="#"></a>
+    <form id="link-form" class="link-form" style="display:none">
+      <label for="link-input">O escribe el código de control que aparece en el TV</label>
+      <input id="link-input" inputmode="numeric" autocomplete="off" maxlength="9" placeholder="0000 0000" />
+      <button type="submit" class="primary">Conectar</button>
+      <p id="link-error" class="link-error"></p>
+    </form>
   </main>
 
   <!-- Hoja de serie (temporadas y episodios) -->
