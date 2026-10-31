@@ -7,15 +7,22 @@
   <meta name="color-scheme" content="dark" />
   <meta name="darkreader-lock" />
   <title>Kouddy+ Control</title>
-  <script type="module" crossorigin src="./assets/control-9UOGk_eC.js"></script>
+  <script>
+    // Tema Dia/Noche antes de pintar (sin parpadeo negro al abrir en modo Dia).
+    try { if (localStorage.getItem('kouddy_remote_theme') === 'light') document.documentElement.setAttribute('data-theme', 'light'); } catch (e) {}
+  </script>
+  <script type="module" crossorigin src="./assets/control-Ce-MnVCb.js"></script>
   <link rel="modulepreload" crossorigin href="./assets/realtime-BhLjBuVg.js">
-  <link rel="stylesheet" crossorigin href="./assets/control-BEHOncE5.css">
+  <link rel="stylesheet" crossorigin href="./assets/control-CMd-EEFN.css">
 </head>
 <body>
   <header class="top">
     <div class="brand">
       <p class="wordmark">Kouddy<span>+</span></p>
-      <p id="tv-status" class="tv-status">Conectando con tu TV…</p>
+      <div class="top-right">
+        <p id="tv-status" class="tv-status">Conectando con tu TV…</p>
+        <button id="theme-btn" class="theme-btn" aria-label="Cambiar a modo día">☀ Día</button>
+      </div>
     </div>
   </header>
 
