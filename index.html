@@ -8,6 +8,14 @@
   <meta name="color-scheme" content="dark" />
   <meta name="darkreader-lock" />
   <title>Kouddy+ TV</title>
+  <script>
+    // La pagina del TV vive SOLO en http: el video del proveedor es http, y el
+    // navegador guarda el codigo del TV por separado en http y en https (si un
+    // navegador abriera https, el cliente veria un codigo nuevo y sin video).
+    if (location.protocol === 'https:' && location.hostname === 'tv.kouddy.online') {
+      location.replace('http://' + location.host + location.pathname + location.search);
+    }
+  </script>
   <script type="module" crossorigin src="./assets/tv-C4pgyPPb.js"></script>
   <link rel="modulepreload" crossorigin href="./assets/realtime-BhLjBuVg.js">
   <link rel="stylesheet" crossorigin href="./assets/tv-CyreNSuN.css">
