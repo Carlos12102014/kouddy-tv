@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- La pagina ya es oscura: evita que el "modo oscuro forzado" del navegador
+       del TV oscurezca el fondo blanco del QR y lo vuelva ilegible. -->
+  <meta name="color-scheme" content="dark" />
+  <meta name="darkreader-lock" />
+  <title>Kouddy+ TV</title>
+  <script type="module" crossorigin src="./assets/tv-CdmlnFfq.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/realtime-BhLjBuVg.js">
+  <link rel="stylesheet" crossorigin href="./assets/tv-ByrbOFkZ.css">
+</head>
+<body>
+  <div id="app">
+    <div id="bg" class="bg is-off">
+      <div class="bg-layer"></div>
+      <div class="bg-layer"></div>
+      <div class="bg-scrim"></div>
+      <p class="bg-caption"></p>
+    </div>
+    <section id="screen-loading" class="screen is-active">
+      <p class="wordmark big">Kouddy<span>+</span></p>
+      <div class="spinner"></div>
+    </section>
+
+    <section id="screen-activate" class="screen split">
+      <div class="split-copy">
+        <p class="wordmark">Kouddy<span>+</span></p>
+        <h1 id="activate-title">Activa Kouddy+ en este TV</h1>
+        <p id="activate-text" class="lead">Escanea el código con tu celular y pídele a Kody tu demostración gratis.</p>
+        <p class="label">Código de este TV</p>
+        <div id="activate-code" class="code-digits"></div>
+        <p class="hint">Este código identifica tu TV. Tu servicio se activa solo, no tienes que escribir nada aquí.</p>
+      </div>
+      <div class="split-qr">
+        <div id="activate-qr" class="qr-box"></div>
+        <p class="qr-caption">kouddy.online/activar</p>
+      </div>
+    </section>
+
+    <section id="screen-signal" class="screen">
+      <p class="wordmark big">Kouddy<span>+</span></p>
+      <div class="spinner"></div>
+      <h2>Preparando tu señal</h2>
+      <p class="lead">Tu servicio está activo. Esto puede tardar unos minutos.</p>
+    </section>
+
+    <section id="screen-pair" class="screen split">
+      <div class="split-copy">
+        <p class="wordmark">Kouddy<span>+</span></p>
+        <h1>Tu celular es el control</h1>
+        <ol class="steps">
+          <li><span>1</span>Escanea este código con la cámara de tu celular.</li>
+          <li><span>2</span>Elige un canal, película o serie.</li>
+          <li><span>3</span>Se reproduce aquí en el TV.</li>
+        </ol>
+        <p id="pair-status" class="status">Esperando el celular…</p>
+        <p class="hint" id="pair-expiry"></p>
+        <p class="fs-hint" id="fs-hint">Pulsa <strong>OK</strong> en el control del TV para ver en pantalla completa</p>
+      </div>
+      <div class="split-qr">
+        <div id="pair-qr" class="qr-box"></div>
+        <p class="qr-caption">Código del TV: <strong id="pair-code"></strong></p>
+      </div>
+    </section>
+
+    <section id="screen-player" class="screen player">
+      <video id="video" playsinline preload="auto"></video>
+      <div id="player-spinner" class="spinner overlay-spinner"></div>
+      <div id="player-info" class="player-info">
+        <p id="player-kind" class="player-kind"></p>
+        <p id="player-title" class="player-title"></p>
+      </div>
+      <div id="player-hint" class="player-hint"></div>
+      <div id="player-error" class="player-error">
+        <p id="player-error-text"></p>
+        <p class="hint">Elige otra opción desde tu celular.</p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

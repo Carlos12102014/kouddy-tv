@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#050505" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="darkreader-lock" />
+  <title>Kouddy+ Control</title>
+  <script type="module" crossorigin src="./assets/control-9UOGk_eC.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/realtime-BhLjBuVg.js">
+  <link rel="stylesheet" crossorigin href="./assets/control-BEHOncE5.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <p class="wordmark">Kouddy<span>+</span></p>
+      <p id="tv-status" class="tv-status">Conectando con tu TV…</p>
+    </div>
+  </header>
+
+  <main id="view-catalog" class="view">
+    <nav class="tabs" id="tabs">
+      <button data-tab="home">Inicio</button>
+      <button data-tab="live">En vivo</button>
+      <button data-tab="movies">Películas</button>
+      <button data-tab="series">Series</button>
+    </nav>
+    <div class="search" id="search-box">
+      <input id="search" type="search" placeholder="Buscar" autocomplete="off" />
+    </div>
+    <div id="chips" class="chips"></div>
+    <div id="list" class="list"></div>
+  </main>
+
+  <main id="view-message" class="view message">
+    <p class="wordmark">Kouddy<span>+</span></p>
+    <h1 id="message-title"></h1>
+    <p id="message-text"></p>
+    <a id="message-action" class="primary" href="#"></a>
+  </main>
+
+  <!-- Hoja de serie (temporadas y episodios) -->
+  <div id="sheet" class="sheet">
+    <div class="sheet-panel">
+      <button id="sheet-close" class="sheet-close" aria-label="Cerrar">✕</button>
+      <div id="sheet-body"></div>
+    </div>
+  </div>
+
+  <!-- Hoja de opciones genérica (reanudar, idioma, subtítulos, pantalla) -->
+  <div id="choice" class="sheet choice">
+    <div class="sheet-panel">
+      <h2 id="choice-title"></h2>
+      <p id="choice-note" class="meta"></p>
+      <div id="choice-list"></div>
+      <button id="choice-cancel" class="choice-cancel">Cancelar</button>
+    </div>
+  </div>
+
+  <!-- Barra mini de lo que se está viendo -->
+  <footer id="mini" class="mini">
+    <button id="mini-open" class="mini-open">
+      <span id="mini-art" class="mini-art"></span>
+      <span class="mini-text">
+        <span id="mini-kind" class="mini-kind"></span>
+        <span id="mini-title" class="mini-title"></span>
+      </span>
+    </button>
+    <button id="mini-toggle" class="mini-toggle" aria-label="Pausa">❚❚</button>
+  </footer>
+
+  <!-- Control completo -->
+  <section id="remote" class="remote">
+    <div class="remote-top">
+      <button id="remote-close" class="icon-btn" aria-label="Cerrar">⌄</button>
+      <p class="remote-label">Reproduciendo en tu TV</p>
+      <button id="btn-stop" class="icon-btn" aria-label="Detener">■</button>
+    </div>
+    <div id="remote-art" class="remote-art"></div>
+    <p id="now-kind" class="now-kind"></p>
+    <p id="now-title" class="now-title"></p>
+    <p id="now-note" class="now-note"></p>
+
+    <div id="now-progress" class="progress">
+      <span id="now-pos">0:00</span>
+      <input id="seek" type="range" min="0" max="100" value="0" />
+      <span id="now-dur">0:00</span>
+    </div>
+
+    <div class="controls">
+      <button id="btn-prev" class="icon-btn" aria-label="Anterior">⏮</button>
+      <button id="btn-back10" class="icon-btn" aria-label="Atrás 10 segundos">−10</button>
+      <button id="btn-toggle" class="play-btn" aria-label="Pausa">❚❚</button>
+      <button id="btn-fwd10" class="icon-btn" aria-label="Adelantar 10 segundos">+10</button>
+      <button id="btn-next" class="icon-btn" aria-label="Siguiente">⏭</button>
+    </div>
+
+    <div class="volume">
+      <button id="btn-voldown" class="small-btn">Vol −</button>
+      <button id="btn-mute" class="small-btn">Silencio</button>
+      <button id="btn-volup" class="small-btn">Vol +</button>
+    </div>
+
+    <div class="actions">
+      <button id="btn-fav" class="action"><span class="action-icon">♡</span><span>Favorito</span></button>
+      <button id="btn-audio" class="action"><span class="action-icon">A</span><span>Idioma</span></button>
+      <button id="btn-subs" class="action"><span class="action-icon">CC</span><span>Subtítulos</span></button>
+      <button id="btn-aspect" class="action"><span class="action-icon">▭</span><span>Pantalla</span></button>
+    </div>
+  </section>
+
+  <div id="toast" class="toast"></div>
+</body>
+</html>
