@@ -12,11 +12,21 @@
     // La pagina del TV vive SOLO en http: el video del proveedor es http, y el
     // navegador guarda el codigo del TV por separado en http y en https (si un
     // navegador abriera https, el cliente veria un codigo nuevo y sin video).
+    // Ojo: si el navegador tiene "usar siempre conexiones seguras", vuelve a
+    // subir a https y la pagina quedaba rebotando sin parar (paso 2026-11-02 en
+    // Chrome de PC). Se redirige UNA vez; si regresa a https, se queda aqui y
+    // le explica al cliente como permitir el video.
     if (location.protocol === 'https:' && location.hostname === 'tv.kouddy.online') {
-      location.replace('http://' + location.host + location.pathname + location.search);
+      var kdLooped = /[?&]h=1/.test(location.search);
+      try { if (sessionStorage.getItem('kd_https_try')) kdLooped = true; sessionStorage.setItem('kd_https_try', '1'); } catch (e) {}
+      if (!kdLooped) {
+        location.replace('http://' + location.host + location.pathname + (location.search ? location.search + '&h=1' : '?h=1'));
+      } else {
+        window.KOUDDY_FORCED_HTTPS = true;
+      }
     }
   </script>
-  <script type="module" crossorigin src="./assets/tv-B2kInvO9.js"></script>
+  <script type="module" crossorigin src="./assets/tv-COfku8H-.js"></script>
   <link rel="modulepreload" crossorigin href="./assets/realtime-BhLjBuVg.js">
   <link rel="stylesheet" crossorigin href="./assets/tv-CyreNSuN.css">
 </head>
