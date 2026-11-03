@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "online.kouddy.control",
+    "sha256_cert_fingerprints": ["0F:EC:AE:CA:59:DE:71:60:BF:C7:1F:09:2C:FA:34:08:18:7A:C1:C4:B0:54:9F:D3:98:7A:FC:E2:34:82:BD:58"]
+  }
+}]
